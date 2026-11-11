@@ -1,0 +1,24 @@
+{
+  "name": "so-san-deal",
+  "version": "1.0.0",
+  "description": "Livestream sale deal lists: admins import PDF/Excel deal lists and pin them; the public browses and filters.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --env-file-if-exists=.env --watch src/server.js",
+    "import": "node --env-file-if-exists=.env scripts/import.js",
+    "test": "node --test \"test/*.test.js\"",
+    "deploy:pack": "node scripts/pack.js",
+    "backup": "node --env-file-if-exists=.env scripts/backup.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pdfjs-dist": "^4.10.38",
+    "sharp": "^0.35.5",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}
